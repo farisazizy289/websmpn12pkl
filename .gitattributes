@@ -1,10 +1,22 @@
+# Atur akhir baris secara otomatis untuk semua file teks
 * text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
+# Atur akhir baris LF untuk file teks tertentu
+*.blade.php text eol=lf diff=html
+*.css text eol=lf diff=css
+*.html text eol=lf diff=html
+*.md text eol=lf diff=markdown
+*.php text eol=lf diff=php
+*.js text eol=lf
+*.json text eol=lf
+*.sql text eol=lf
 
+# File yang diabaikan saat ekspor (misalnya, untuk release)
 /.github export-ignore
 CHANGELOG.md export-ignore
+
+# File besar yang dikelola oleh Git LFS
+*.rar filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.sql filter=lfs diff=lfs merge=lfs -text
