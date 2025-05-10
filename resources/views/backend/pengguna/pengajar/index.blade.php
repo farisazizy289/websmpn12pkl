@@ -65,7 +65,13 @@
                                                     <td> {{$pengajars->userDetail->nip}} </td>
                                                     <td> {{$pengajars->email}} </td>
                                                     <td> {{$pengajars->status == 'Aktif' ? 'Aktif' : 'Tidak Aktif'}} </td>
-                                                    <td><a href=" {{route('backend-pengguna-pengajar.edit', $pengajars->id)}} " class="btn btn-success btn-sm">Edit</a></td>
+                                                    <td><a href=" {{route('backend-pengguna-pengajar.edit', $pengajars->id)}} " class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="{{ route('backend-pengguna-pengajar.destroy', $pengajars->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajar ini?')">Hapus</button>
+    </form></td>
+                                                    
                                                 </tr>
                                            @endforeach
                                         </tbody>                                   

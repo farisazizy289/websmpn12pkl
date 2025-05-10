@@ -135,5 +135,15 @@ class ProgramController extends Controller
             Session::flash('error','Program Studi Gagal diupdate !');
             throw new ErrorException($e->getMessage());
         }
+
+        
     }
+
+    public function destroy($id)
+    {
+        //
+    }
+
+    
+
 }

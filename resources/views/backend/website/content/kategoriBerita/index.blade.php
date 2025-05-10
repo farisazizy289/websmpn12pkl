@@ -60,8 +60,16 @@
                                                    <td> {{$kategoris->nama}} </td>
                                                    <td> {{$kategoris->is_active == '0' ? 'Aktif' : 'Tidak Aktif'}} </td>
                                                    <td>
-                                                       <a href=" {{route('backend-kategori-berita.edit', $kategoris->id)}} " class="btn btn-success btn-sm">Edit</a>
-                                                   </td>
+    <a href="{{ route('backend-kategori-berita.edit', $kategoris->id) }}" class="btn btn-success btn-sm">Edit</a>
+
+    {{-- Tombol delete dengan form --}}
+    <form action="{{ route('backend-kategori-berita.destroy', $kategoris->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?')">Delete</button>
+    </form>
+</td>
+
                                                </tr>
                                            @endforeach
                                         </tbody>                                   

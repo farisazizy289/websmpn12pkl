@@ -21,6 +21,7 @@
             </div>
         </div>
     @endif
+
 <div class="content-wrapper container-xxl p-0">
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -47,10 +48,10 @@
                                             <tr>
                                                 <th></th>
                                                 <th>No</th>
-                                                <th>Title</th>
+                                                <th>Judul</th>
                                                 <th>Video</th>
                                                 <th>Status</th>
-                                                <th>Action</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>    
                                         <tbody>
@@ -61,7 +62,14 @@
                                                     <td> {{$videos->title}} </td>
                                                     <td> {{$videos->url}} </td>
                                                     <td> {{$videos->is_active == '0' ?'Aktif' : 'Tidak Aktif'}} </td>
-                                                    <td> <a href=" {{route('backend-video.edit', $videos->id)}} " class="btn btn-success btn-sm">Edit</a> </td>
+                                                    <td> 
+                                                        <a href=" {{route('backend-video.edit', $videos->id)}} " class="btn btn-success btn-sm">Edit</a>
+                                                        <form action="{{ route('backend-video.destroy', $videos->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus video ini?')">Hapus</button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                            @endforeach
                                         </tbody>                                   
@@ -69,6 +77,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Form Tambah Video -->
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-header header-bottom">
@@ -107,7 +117,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="basicInput">Title</label> <span class="text-danger">*</span>
+                                                    <label for="basicInput">Judul</label> <span class="text-danger">*</span>
                                                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror">
                                                     @error('title')
                                                         <div class="invalid-feedback">
@@ -119,7 +129,7 @@
 
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="basicInput">Description</label> <span class="text-danger">*</span>
+                                                    <label for="basicInput">Deskripsi</label> <span class="text-danger">*</span>
                                                     <textarea name="desc" class="form-control  @error('desc') is-invalid @enderror" rows="5"></textarea>
                                                     @error('desc')
                                                         <div class="invalid-feedback">
@@ -131,7 +141,7 @@
                                           
                                         </div>
                                         <button class="btn btn-primary" type="submit">Tambah</button>
-                                        <a href="{{route('backend-video.index')}}" class="btn btn-warning">Batal</a>`
+                                        <a href="{{route('backend-video.index')}}" class="btn btn-warning">Batal</a>
                                     </form>
                                 </div>
                             </div>

@@ -41,11 +41,14 @@ class VideoController extends Controller
     public function store(VideoRequest $request)
     {
         try {
+           
+            
             if ($request->is_active == '0') {
                 $video = Video::where('is_active','0')->update([
                     'is_active' => '1'
                 ]);
             }
+            
 
             $video = new Video;
             $video->title       = $request->title;
@@ -93,12 +96,15 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         try {
+            
             if ($request->is_active == '0') {
                 $video = Video::where('is_active','0')->update([
                     'is_active' => '1'
                 ]);
             }
+            
 
             $video = Video::find($id);
             $video->title       = $request->title ?? $video->title;
@@ -122,6 +128,14 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        $video = Video::findOrFail($id);
+        $video->delete();
+
+        Session::flash('success', 'Video berhasil dihapus!');
+        return redirect()->route('backend-video.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
     }
 }

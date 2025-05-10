@@ -11,7 +11,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".60s">
                 <h2 class="about-counter title-bar-counter" data-num="10">10</h2>
-                <p>EKSTRAKULIKULER</p>
+                <p>EKSTRAKURIKULER</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".80s">
                 <h2 class="about-counter title-bar-counter" data-num="77">77</h2>

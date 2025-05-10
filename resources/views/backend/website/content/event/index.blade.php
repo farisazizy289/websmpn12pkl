@@ -68,8 +68,15 @@
                                                     <td> {{$events->acara}} </td>
                                                     <td> {{$events->is_active == '0' ? 'Aktif' : 'Tidak Aktif'}} </td>
                                                     <td>
-                                                        <a href=" {{route('backend-event.edit', $events->id)}} " class="btn btn-success btn-sm">Edit</a>
-                                                    </td>
+    <a href="{{ route('backend-event.edit', $events->id) }}" class="btn btn-success btn-sm">Edit</a>
+
+    <form action="{{ route('backend-event.destroy', $events->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">Delete</button>
+    </form>
+</td>
+
                                                 </tr>
                                             @endforeach
                                         </tbody>                                   

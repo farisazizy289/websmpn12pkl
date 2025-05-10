@@ -178,6 +178,15 @@ class PengajarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pengajar = User::findOrFail($id); // Asumsinya data Pengajar ada di tabel User, jika tidak, sesuaikan modelnya
+
+    // Hapus data terkait jika diperlukan
+    $pengajar->userDetail()->delete();
+
+    // Hapus data Pengajar
+    $pengajar->delete();
+
+    // Redirect dengan pesan sukses
+    return redirect()->route('backend-pengguna-pengajar.index')->with('success', 'Pengajar berhasil dihapus');
     }
 }

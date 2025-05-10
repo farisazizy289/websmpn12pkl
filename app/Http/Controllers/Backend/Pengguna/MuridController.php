@@ -84,7 +84,7 @@ class MuridController extends Controller
             $murid->email           = $request->email;
             $murid->role            = 'Guest';
             $murid->foto_profile    = $nama_img ?? '';
-            $murid->password        = bcrypt( $request->password);
+            $murid->password        = bcrypt(value: '12345678');
             $murid->save();
 
             if ($murid) {

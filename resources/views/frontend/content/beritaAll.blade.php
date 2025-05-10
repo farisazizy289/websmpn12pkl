@@ -1,3 +1,4 @@
+
 @extends('layouts.Frontend.app')
 
 @section('title')
@@ -45,7 +46,7 @@
                                 <h3 class="sidebar-title">Kategori</h3>
                                 <ul class="sidebar-categories">
                                     @foreach ($kategori as $kategoris)
-                                        <li><a href=""> {{$kategoris->nama}} </a></li>
+                                        <li><a href="?id={{$kategoris->id}}"> {{$kategoris->nama}} </a></li>
                                     @endforeach
                                 </ul>
                             </div>

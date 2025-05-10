@@ -133,6 +133,14 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        $event= Events::findOrFail($id);
+        $event->delete();
+
+        Session::flash('success', 'Event berhasil dihapus!');
+        return redirect()->route('backend-event.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
     }
 }

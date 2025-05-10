@@ -127,6 +127,14 @@ class ImageSliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        $imageSlider = ImageSlider::findOrFail($id);
+        $imageSlider->delete();
+
+        Session::flash('success', 'Image Slider berhasil dihapus!');
+        return redirect()->route('backend-imageslider.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
     }
 }

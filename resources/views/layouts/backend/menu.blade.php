@@ -49,7 +49,7 @@
                 <ul class="menu-content">
                     <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('program-studi.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Program Studi</span>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Mata Pelajaran</span>
                         </a>
                     </li>
                     <li class="nav-item {{ (request()->is('backend-kegiatan')) ? 'active' : '' }}">
@@ -65,6 +65,7 @@
                             <li class="nav-item {{ (request()->is('backend-visimisi')) ? 'active' : '' }}">
                                 <a class="d-flex align-items-center" href="{{route('backend-visimisi.index')}}"><span class="menu-item text-truncate" data-i18n="Third Level">Visi dan Misi</span></a>
                             </li>
+                             
                         </ul>
                     </li>
                 </ul>
@@ -159,31 +160,7 @@
                 </ul>
             </li>
 
-            {{-- MENU GURU --}}
-            @elseif(Auth::user()->role == 'Guru')
-            <li class=" nav-item">
-                <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
-                    <span class="menu-title text-truncate" data-i18n="Card">Data Murid</span>
-                </a>
-                <ul class="menu-content">
-                    <li>
-                        <a class="d-flex align-items-center" href=""><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Kelas X</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="d-flex align-items-center" href=""><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Kelas XI</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="d-flex align-items-center" href=""><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Kelas XII</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
+            
             {{-- MENU GUEST --}}
             @elseif(Auth::user()->role == 'Guest')
             <li class="nav-item {{ (request()->is('ppdb/form-pendaftaran')) ? 'active' : '' }}">

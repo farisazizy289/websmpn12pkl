@@ -63,6 +63,12 @@
                                                     <td> {{$abouts->is_active == '0' ? 'Aktif' : 'Tidak Aktif'}} </td>
                                                     <td>
                                                         <a href=" {{route('backend-about.edit', $abouts->id)}} " class="btn btn-success btn-sm">Edit</a>
+                                                        <!-- Tombol Hapus -->
+                                                        <form action="{{ route('backend-about.destroy', $abouts->id) }}" method="POST" style="display:inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

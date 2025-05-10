@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Website;
 
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Models\KategoriBerita;
 use Illuminate\Http\Request;
@@ -104,8 +105,17 @@ class KategoriBeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+   public function destroy($id)
+{
+    try {
+        $kategori = KategoriBerita::findOrFail($id);
+        $kategori->delete();
+
+        Session::flash('success', 'Kategori berhasil dihapus!');
+        return redirect()->route('backend-kategori-berita.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
     }
+}
+
 }

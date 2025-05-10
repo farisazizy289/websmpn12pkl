@@ -3,6 +3,11 @@
 use App\Http\Controllers\Backend\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\KategoriBeritaController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +42,17 @@ Route::get('/','Frontend\IndexController@index');
         /// EVENT \\\
         Route::get('event/{slug}',[App\Http\Controllers\Frontend\IndexController::class,'detailEvent'])->name('detail.event');
         Route::get('event',[App\Http\Controllers\Frontend\IndexController::class,'events'])->name('event');
+        
+        /// ABSENSI \\\
+        Route::get('/absensi', function () {
+        return view('frontend.content.absensi');
+
+        /// CEK ABSENSI \\\
+        Route::post('/cek-absensi', [AbsensiController::class, 'cekAbsensi'])->name('cek.absensi');
+
+        /// IMPORT SISWA \\\
+        Route::post('/import-siswa', [AbsensiController::class, 'importSiswa'])->name('import.siswa');
+});
 
 Auth::routes(['register' => false]);
 
@@ -103,5 +119,27 @@ Route::middleware('auth')->group(function () {
             /// BENDAHARA \\\
             'backend-pengguna-bendahara'  => Backend\Pengguna\BendaharaController::class
         ]);
+
+        /// DELETE BERITA
+        Route::delete('/backend-berita/{id}', [BeritaController::class, 'destroy'])->name('backend-berita.destroy');
+        /// DELETE KATEGORI BERITA 
+        Route::delete('/backend-kategori-berita/{id}', [KategoriBeritaController::class, 'destroy'])->name('backend-kategori-berita.destroy');
+        /// DELETE EVENT
+        Route::delete('/backend-event/{id}', [EventsController::class, 'destroy'])->name('backend-event.destroy');
+        /// DELETE EKSTRAKURIKULER 
+        Route::delete('/backend-kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('backend-kegiatan.destroy');
+        /// DELETE ABOUT
+        Route::delete('/backend-about/{id}', [AboutController::class, 'destroy'])->name('backend-about.destroy');
+        /// DELETE IMAGE SLIDER
+        Route::delete('/backend-imageslider/{id}', [ImageSliderController::class, 'destroy'])->name('backend-imageslider.destroy');
+        /// DELETE PENGAJAR
+        Route::delete('/backend-pengguna-pengajar/{id}', [PengajarController::class, 'destroy'])->name('backend-pengguna-pengajar.destroy');
+        /// DELETE VIDEO
+        Route::delete('/backend-video/{id}', [VideoController::class, 'destroy'])->name('backend-video.destroy');
+        
+            
+
+
+
     });
 });

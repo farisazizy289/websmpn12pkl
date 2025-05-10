@@ -130,6 +130,14 @@ class KegiatanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        $kegiatan= Kegiatan::findOrFail($id);
+        $kegiatan->delete();
+
+        Session::flash('success', 'Ekstrakurikuler berhasil dihapus!');
+        return redirect()->route('backend-kegiatan.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
     }
 }

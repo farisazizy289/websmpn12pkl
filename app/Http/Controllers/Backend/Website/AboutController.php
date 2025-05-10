@@ -126,7 +126,7 @@ class AboutController extends Controller
             $about->save();
 
             DB::commit();
-            Session::flash('success','About Berhasil ditambah !');
+            Session::flash('success','Foto About Berhasil ditambah !');
             return redirect()->route('backend-about.index');
 
         } catch (ErrorException $e) {
@@ -143,6 +143,14 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+        $about = About::findOrFail($id);
+        $about->delete();
+
+        Session::flash('success', 'About berhasil dihapus!');
+        return redirect()->route('backend-about.index');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
     }
 }

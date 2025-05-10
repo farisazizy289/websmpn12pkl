@@ -28,17 +28,7 @@
                         <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{@$footer->telp}}"> {{@$footer->telp}}</a></li>
                         <li><i class="fa fa-envelope-o" aria-hidden="true"></i>{{@$footer->email}}</li>
                     </ul>
-                    <div class="newsletter-area">
-                        <h3>Ingin mendapat berita terupdate ?</h3>
-                        <div class="input-group stylish-input-group">
-                            <input type="text" placeholder="Masukan email kamu disini" class="form-control">
-                            <span class="input-group-addon">
-                                    <button type="submit">
-                                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                    </button>
-                                </span>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -73,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                <p>&copy; {{date('Y')}} <a href="http://andridesmana.pw/" target="_blank">Andri Desmana</a> All Rights Reserved.</p>
+                <p>&copy; {{date('Y')}} <a href="" target="_blank">SMPN 12 Pekalongan</a> All Rights Reserved.</p>
             </div>
         </div>
     </div>

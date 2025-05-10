@@ -27,7 +27,7 @@ class PengajarRequest extends FormRequest
             return [
                 'name'          => ['required','unique:users'],
                 'email'         => ['required','unique:users','email'],
-                'foto_profile'  => ['required','image','max:1024'],
+                'foto_profile'  => ['required','image','max:2048'],
                 'mengajar'      => ['required'],
                 'nip'           => ['required','numeric'],
             ];
@@ -36,7 +36,7 @@ class PengajarRequest extends FormRequest
         return [
             'name'          => ['required'],
             'email'         => ['required','email'],
-            'foto_profile'  => ['image','max:1024'],
+            'foto_profile'  => ['image','max:2048'],
             'mengajar'      => ['required'],
             'nip'           => ['required','numeric'],
         ];

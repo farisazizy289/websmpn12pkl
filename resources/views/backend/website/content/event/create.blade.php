@@ -76,20 +76,20 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="form-group">
-                                        <label for="basicInput">Waktu Dimulai</label> <span class="text-danger">*</span>
-                                        <input type="datetime-local" class="form-control @error('acara') is-invalid @enderror" name="acara" value=" {{old('acara')}} " placeholder="Waktu dimulai Acara"/>
-                                        @error('acara')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="basicInput">Waktu Dimulai</label> <span class="text-danger">*</span>
+                                            <input type="datetime-local" class="form-control @error('acara') is-invalid @enderror" name="acara" value=" {{old('acara')}} " placeholder="Waktu dimulai Acara"/>
+                                            @error('acara')
+                                                <div class="invalid-feedback">
+                                                <strong>{{ $message }}</strong>`
+                                                </div>
+                                            @enderror
+                                        </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group"> <span class="text-danger">*</span>
-                                        <label for="basicInput">Desripsi Singkat</label> <span class="text-danger">*</span>
+                                        <label for="basicInput">Deskripsi Singkat</label> <span class="text-danger">*</span>
                                         <textarea name="desc" class="form-control  @error('desc') is-invalid @enderror" rows="3"> {{old('desc')}} </textarea>
                                         @error('desc')
                                             <div class="invalid-feedback">

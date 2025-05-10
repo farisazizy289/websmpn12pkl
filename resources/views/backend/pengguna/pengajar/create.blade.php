@@ -71,7 +71,36 @@
                                         <label for="basicInput">Mengajar</label> <span class="text-danger">*</span>
                                         <select name="mengajar" class="form-control @error('mengajar') is-invalid @enderror">
                                             <option value="">-- Pilih --</option>
+                                            <option value="Mata Pelajaran">Mata Pelajaran</option>
+                                            <option value="Bimbingan Konseling">Bimbingan Konseling</option>
                                             <option value="Matematika">Matematika</option>
+                                            <option value="Pendidikan Pancasila">Pendidikan Pancasila</option>
+                                            <option value="Informatika">Informatika</option>
+                                            <option value="Kepala Sekolah">Kepala Sekolah</option>
+                                            <option value="Bahasa Inggris">Bahasa Inggris</option>
+                                            <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                                            <option value="IPS">IPS</option>
+                                            <option value="Seni Budaya">Seni Budaya</option>
+                                            <option value="Bahasa Jawa">Bahasa Jawa</option>
+                                            <option value="PJOK">PJOK</option>
+                                            <option value="Prakarya">Prakarya</option>
+                                            <option value="PAIBP">PAIBP</option>
+                                            <option value="IPA">IPA</option>
+                                            <option value="Penjaga Sekolah">Tenaga Kependidikan (Penjaga Sekolah)</option>
+                                            <option value="Tukang Kebun">Tenaga Kependidikan (Tukang Kebun)</option>
+                                            <option value="Keamanan Sekolah">Tenaga Kependidikan (Keamanan Sekolah)</option>
+                                            <option value="Administrasi Dapodik dam ASIK PTK">Tenaga Kependidikan (Administrasi Dapodik dan ASIK PTK)</option>
+                                            <option value="Administrasi Keuangan">Tenaga Kependidikan (Administrasi Keuangan)</option>
+                                            <option value="Administrasi Kesiswaan">Tenaga Kependidikan (Administrasi Kesiswaan)</option>
+                                            <option value="Pengelola Perpustakaan">Tenaga Kependidikan (Pengelola Perpustakaan)</option>
+                                            <option value="Office Boy">Tenaga Kependidikan (Office Boy)</option>
+
+
+
+
+
+
+
                                         </select>
                                         @error('mengajar')
                                             <div class="invalid-feedback">
@@ -117,17 +146,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Linkedln</label>
-                                        <input type="text" class="form-control @error('linkedln') is-invalid @enderror" name="linkedln" value=" {{old('linkidln')}} " placeholder="Linkedln" />
-                                        @error('linkedln')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
 
                                 <div class="col-3">
                                     <div class="form-group">
@@ -153,29 +172,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Youtube</label>
-                                        <input type="text" class="form-control @error('youtube') is-invalid @enderror" name="youtube" value=" {{old('youtube')}} " placeholder="Youtube" />
-                                        @error('youtube')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Twitter</label>
-                                        <input type="text" class="form-control @error('twitter') is-invalid @enderror" name="twitter" value=" {{old('twitter')}} " placeholder="Twitter" />
-                                        @error('twitter')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
+                                
                               
                             </div>
                             <button class="btn btn-primary" type="submit">Tambah</button>

@@ -14,10 +14,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="news-img-holder">
                                 <img src="{{asset('storage/images/berita/' .$berita->thumbnail)}}" class="img-responsive" alt="research">
-                                <ul class="news-date1">
-                                    <li>{{Carbon\Carbon::parse($berita->created_at)->format('d M')}}</li>
-                                    <li>{{Carbon\Carbon::parse($berita->created_at)->format('Y')}}</li>
-                                </ul>
+                                
                             </div>
                             <h2 class="title-default-left-bold-lowhight"><a href="#">{{$berita->title}}</a></h2>
                             <ul class="title-bar-high news-comments">
@@ -26,12 +23,10 @@
                             </ul>
                             <p> {!! $berita->content !!} </p>
                             <ul class="news-social">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="https://web.facebook.com/profile.php?id=61559812045661&locale=id_ID"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/smpn12pekalongan/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.youtube.com/@smpn12pekalonganofficial14"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                               
                             </ul>
 
                         </div>

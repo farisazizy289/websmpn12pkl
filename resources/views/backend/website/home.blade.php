@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <h2 class="font-weight-bolder mb-0">{{$guru}}</h2>
+                                <h2 class="font-weight-bolder mb-0">24</h2>
                                 <p class="card-text">Guru</p>
                             </div>
                             <div class="avatar bg-light-primary p-50 m-0">
@@ -69,7 +69,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <h2 class="font-weight-bolder mb-0">{{$murid}}</h2>
+                                <h2 class="font-weight-bolder mb-0">340</h2>
                                 <p class="card-text">Murid</p>
                             </div>
                             <div class="avatar bg-light-warning p-50 m-0">
@@ -84,8 +84,8 @@
                         <div class="card">
                             <div class="card-header">
                                 <div>
-                                    <h2 class="font-weight-bolder mb-0">{{$alumni}}</h2>
-                                    <p class="card-text">Alumni</p>
+                                    <h2 class="font-weight-bolder mb-0">9</h2>
+                                    <p class="card-text">Tenaga Kependidikan</p>
                                 </div>
                                 <div class="avatar bg-light-success p-50 m-0">
                                     <div class="avatar-content">
@@ -134,7 +134,7 @@
                             </div>
                             <div class="media-body">
                                 <h6 class="mb-0">{{$event->lokasi ?? 'Belum Ada Event'}}</h6>
-                                <small>Manhattan, New york City</small>
+                                <small>Pekalongan, Jawa Tengah, Indonesia.</small>
                             </div>
                         </div>
 
@@ -142,79 +142,7 @@
                 </div>
             </div>
 
-            @if (Auth::user()->role == 'Admin')
-                <div class="col-xl-8 col-md-6 col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card card-statistics">
-                            <div class="card-header">
-                                <h4 class="card-title">Statistik Perpustakaan</h4>
-                                <div class="d-flex align-items-center">
-                                    <p class="card-text font-small-2 mr-25 mb-0">Updated 1 day ago</p>
-                                </div>
-                            </div>
-                            <div class="card-body statistics-body">
-                                <div class="row">
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <div class="media">
-                                            <div class="avatar bg-light-primary mr-2">
-                                                <div class="avatar-content">
-                                                    <i data-feather="trending-up" class="avatar-icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">30</h4>
-                                                <p class="card-text font-small-3 mb-0">Pengunjung</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
-                                        <div class="media">
-                                            <div class="avatar bg-light-info mr-2">
-                                                <div class="avatar-content">
-                                                    <i data-feather="user" class="avatar-icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">{{$borrow}}</h4>
-                                                <p class="card-text font-small-3 mb-0">Peminjam</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
-                                        <div class="media">
-                                            <div class="avatar bg-light-danger mr-2">
-                                                <div class="avatar-content">
-                                                    <i data-feather="users" class="avatar-icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">{{$member}}</h4>
-                                                <p class="card-text font-small-3 mb-0">Members</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-sm-6 col-12">
-                                        <div class="media">
-                                            <div class="avatar bg-light-success mr-2">
-                                                <div class="avatar-content">
-                                                    <i data-feather="book" class="avatar-icon"></i>
-                                                </div>
-                                            </div>
-                                            <div class="media-body my-auto">
-                                                <h4 class="font-weight-bolder mb-0">{{$book}}</h4>
-                                                <p class="card-text font-small-3 mb-0">Buku</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                </div>
-            @endif
+        
         </div>
     </div>
 </div>

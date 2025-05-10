@@ -1,7 +1,7 @@
 @extends('layouts.backend.app')
 
 @section('title')
-    Program Studi
+    Mata Pelajaran
 @endsection
 
 @section('content')
@@ -26,7 +26,7 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2> Program Studi</h2>
+                    <h2>Mata Pelajaran</h2>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header border-bottom">
-                                    <h4 class="card-title">Program Studi  <a href=" {{route('program-studi.create')}} " class="btn btn-primary">Tambah</a></h4>
+                                    <h4 class="card-title">Mata Pelajaran <a href=" {{route('program-studi.create')}} " class="btn btn-primary">Tambah</a></h4>
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
@@ -65,6 +65,14 @@
                                                     <td> {{$jurusans->is_active == 0 ? 'Aktif' : 'Tidak Aktif'}} </td>
                                                     <td>
                                                         <a href=" {{route('program-studi.edit', $jurusans->id)}} " class="btn btn-success btn-sm">Edit</a>
+
+                                                        <!-- Form Hapus -->
+                                                        <form action="{{ route('program-studi.destroy', $jurusans->id) }}" method="POST" style="display:inline;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                                        </form>
+                                                        
                                                     </td>
                                                 </tr>
                                             @endforeach    

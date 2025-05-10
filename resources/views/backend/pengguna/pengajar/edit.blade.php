@@ -72,7 +72,29 @@
                                         <label for="basicInput">Mengajar</label> <span class="text-danger">*</span>
                                         <select name="mengajar" class="form-control @error('mengajar') is-invalid @enderror">
                                             <option value="">-- Pilih --</option>
+                                            <option value="Informatika" {{$pengajar->userDetail->mengajar == 'Informatika' ? 'selected' : ''}} >Informatika</option>
+                                             <option value="Pendidikan Pancasila" {{$pengajar->userDetail->mengajar == 'Pendidikan Pancasila' ? 'selected' : ''}} >Pendidikan Pancasila</option>
                                             <option value="Matematika" {{$pengajar->userDetail->mengajar == 'Matematika' ? 'selected' : ''}} >Matematika</option>
+                                            <option value="Bimbingan Konseling" {{$pengajar->userDetail->mengajar == 'Bimbingan Konseling' ? 'selected' : ''}} >Bimbingan Konseling</option>
+                                            <option value="Kepala Sekolah" {{$pengajar->userDetail->mengajar == 'Kepala Sekolah' ? 'selected' : ''}} >Kepala Sekolah</option>
+                                            <option value="Bahasa Inggris" {{$pengajar->userDetail->mengajar == 'Bahasa Inggris' ? 'selected' : ''}} >Bahasa Inggris</option>
+                                            <option value="Bahasa Indonesia" {{$pengajar->userDetail->mengajar == 'Bahasa Indonesia' ? 'selected' : ''}} >Bahasa Indonesia</option>
+                                            <option value="IPS" {{$pengajar->userDetail->mengajar == 'IPS' ? 'selected' : ''}} >IPS</option>
+                                            <option value="Seni Budaya" {{$pengajar->userDetail->mengajar == 'Seni Budaya' ? 'selected' : ''}} >Seni Budaya</option>
+                                            <option value="Bahasa Jawa" {{$pengajar->userDetail->mengajar == 'Bahasa Jawa' ? 'selected' : ''}} >Bahasa Jawa</option>
+                                            <option value="PJOK" {{$pengajar->userDetail->mengajar == 'PJOK' ? 'selected' : ''}} >PJOK</option>
+                                            <option value="Prakarya" {{$pengajar->userDetail->mengajar == 'Prakarya' ? 'selected' : ''}} >Prakarya</option>
+                                            <option value="PAIBP" {{$pengajar->userDetail->mengajar == 'PAIBP' ? 'selected' : ''}} >PAIBP</option>
+                                            <option value="IPA" {{$pengajar->userDetail->mengajar == 'IPA' ? 'selected' : ''}} >IPA</option>
+                                            <option value="Penjaga Sekolah" {{$pengajar->userDetail->mengajar == 'Penjaga Sekolah' ? 'selected' : ''}} >Tenaga Kependidikan (Penjaga Sekolah)</option>
+                                            <option value="Tukang Kebun" {{$pengajar->userDetail->mengajar == 'Tukang Kebun' ? 'selected' : ''}} >Tenaga Kependidikan (Tukang Kebun)</option>
+                                            <option value="Keamanan Sekolah" {{$pengajar->userDetail->mengajar == 'Kemananan Sekolah' ? 'selected' : ''}} >Tenaga Kependidikan (Keamanan Sekolah)</option>
+                                            <option value="Administrasi Dapodik dan ASIK PTK" {{$pengajar->userDetail->mengajar == 'Administrasi Dapodik dan ASIK  PTK' ? 'selected' : ''}} >Tenaga Kependidikan (Administrasi Dapodik dan ASIK PTK)</option>
+                                            <option value="Administrasi Keuangan" {{$pengajar->userDetail->mengajar == 'Administrasi Keuangan' ? 'selected' : ''}} >Tenaga Kependidikan (Administrasi Keuangan)</option>
+                                            <option value="Administrasi Kesiswaan" {{$pengajar->userDetail->mengajar == 'Administrasi Kesiswaan' ? 'selected' : ''}} >Tenaga Kependidikan (Administrasi Kesiswaan)</option>
+                                            <option value="Pengelola Perpustakaan" {{$pengajar->userDetail->mengajar == 'Pengelola Perpustakaan' ? 'selected' : ''}} >Tenaga Kependidikan (Pengelola Perpustakaan)</option>
+                                            <option value="Office Boy" {{$pengajar->userDetail->mengajar == 'Office Boy' ? 'selected' : ''}} >Tenaga Kependidikan (Office Boy)</option>
+
                                         </select>
                                         @error('mengajar')
                                             <div class="invalid-feedback">
@@ -134,17 +156,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Linkedln</label>
-                                        <input type="text" class="form-control @error('linkedln') is-invalid @enderror" name="linkedln" value=" {{$pengajar->userDetail->linkidln}} " placeholder="Linkedln" />
-                                        @error('linkedln')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                                
 
                                 <div class="col-3">
                                     <div class="form-group">
@@ -170,29 +182,9 @@
                                     </div>
                                 </div>
 
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Youtube</label>
-                                        <input type="text" class="form-control @error('youtube') is-invalid @enderror" name="youtube" value=" {{$pengajar->userDetail->youtube}} " placeholder="Youtube" />
-                                        @error('youtube')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                                
 
-                                <div class="col-3">
-                                    <div class="form-group">
-                                        <label for="basicInput">Twitter</label>
-                                        <input type="text" class="form-control @error('twitter') is-invalid @enderror" name="twitter" value=" {{$pengajar->userDetail->twitter}} " placeholder="Twitter" />
-                                        @error('twitter')
-                                            <div class="invalid-feedback">
-                                            <strong>{{ $message }}</strong>
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
+                               
                               
                             </div>
                             <button class="btn btn-primary" type="submit">Update</button>

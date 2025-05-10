@@ -61,6 +61,11 @@
                                                     <td> {{$images->is_active == '0' ? 'Aktif' : 'Tidak Aktif'}} </td>
                                                     <td>
                                                         <a href=" {{route('backend-imageslider.edit', $images->id)}} " class="btn btn-success btn-sm">Edit</a>
+                                                        <form action="{{ route('backend-imageslider.destroy', $images->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus slider ini?')">Hapus</button>
+    </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
