@@ -136,6 +136,9 @@ Route::middleware('auth')->group(function () {
         Route::delete('/backend-pengguna-pengajar/{id}', [PengajarController::class, 'destroy'])->name('backend-pengguna-pengajar.destroy');
         /// DELETE VIDEO
         Route::delete('/backend-video/{id}', [VideoController::class, 'destroy'])->name('backend-video.destroy');
+        /// DELETE MATA PELAJARAN
+        Route::delete('/program-studi/{id}', [ProgramController::class, 'destroy'])->name('program-studi.destroy');
+
         
             
 

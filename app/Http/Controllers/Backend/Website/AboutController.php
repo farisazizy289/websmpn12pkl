@@ -126,7 +126,7 @@ class AboutController extends Controller
             $about->save();
 
             DB::commit();
-            Session::flash('success','Foto About Berhasil ditambah !');
+            Session::flash('success','Foto About Berhasil diupdate !');
             return redirect()->route('backend-about.index');
 
         } catch (ErrorException $e) {

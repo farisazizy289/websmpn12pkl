@@ -141,7 +141,15 @@ class ProgramController extends Controller
 
     public function destroy($id)
     {
-        //
+        try {
+            $jurusan= Jurusan::findOrFail($id);
+            $jurusan->delete();
+    
+            Session::flash('success', 'Mata Pelajaran berhasil dihapus!');
+            return redirect()->route('program-studi.index');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     
